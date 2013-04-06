@@ -72,7 +72,12 @@
 				{
 					echo "<tr><td>".$row[0]."</td><td>".$row[1]
 								."</td><td>".$row[2]."</td><td>".$row[3]
-								."</td><td>".$row[4]."</td></tr>";
+								."</td><td>".$row[4]."</td>
+								<td>
+								<form action='action.php?id=1' method='post'>
+								<input type='submit' value='Add to Favs!'>
+								</form>
+								</tr>";
 				}
 				echo "</table>";
 			}

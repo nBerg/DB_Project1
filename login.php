@@ -30,7 +30,9 @@
 		$tmpcount = oci_fetch($result);
 		if ($tmpcount==1) {
 			print "Login Success";
-			header("Location: /~nb2555/DB_Project1/index.php");
+			header("Location: /~nb2555/DB_Project1/favorites.php?var=$username");
+			//header("Location: /~nb2555/DB_Project1/index.php");
+			//print "<a href='favorites.php?var=$username'>Favorites</a>";
 		}else{
 			print "Login Failed\n";
 			print "<br><a href=' /~nb2555/DB_Project1/registration.php'>Not registered?</a></br>";
