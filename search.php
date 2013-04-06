@@ -1,12 +1,13 @@
 <html>
-	
+	<head></head>
+	<body>
+		Search Results:
 		<?php
-			if (isset($_GET['filterSubmit'])) {
-				print_r ($_GET);
-			}
+			$result = submit_search_query($_GET);
+			build_table($result);
+		?>
 
-			submit_search_query($_GET);
-
+		<?php
 			function submit_search_query($data) 
 			{
 				ini_set('display_errors', 'On');
@@ -46,18 +47,35 @@
 												 JOIN Vibes V ON RV.vid = V.vid, Neighborhoods N2
 									WHERE '.$N.' '.$C.' '.$V.'
 									GROUP BY R.rid, R.name, R.street, N.name, R.phone, R.avgPrice';
-echo 'Query: '.$query.'<br>';
 
 				$stmt = oci_parse($conn, $query);
 				oci_execute($stmt, OCI_DEFAULT);
 
-				while ($res = oci_fetch_row($stmt))
+/*				while ($res = oci_fetch_row($stmt))
 				{
 					echo 'Row: '.print_r($res).'<br>';
 				}
-				
+	*/			
 				oci_close($conn);
+				return $stmt;
+			}
+
+			function build_table($data) 
+			{
+				echo '<table border="1">';
+				echo "<thead><tr><th>Restaurant</th>
+												 <th>Address</th>
+												 <th>Neighborhood</th>
+												 <th>Phone Number</th>
+												 <th>AvgPrice</th></tr></thead>";
+				while ($row = oci_fetch_row($data))
+				{
+					echo "<tr><td>".$row[0]."</td><td>".$row[1]
+								."</td><td>".$row[2]."</td><td>".$row[3]
+								."</td><td>".$row[4]."</td></tr>";
+				}
+				echo "</table>";
 			}
 		?>
-
+	</body>
 </html>
