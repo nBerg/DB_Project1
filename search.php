@@ -68,17 +68,33 @@
 												 <th>Neighborhood</th>
 												 <th>Phone Number</th>
 												 <th>AvgPrice</th></tr></thead>";
+				$list = array();
+				for($i = 1; $i <= 5; $i++){
+					array_push($list, $i);
+				}
+				$j = 0;
 				while ($row = oci_fetch_row($data))
 				{
 					echo "<tr><td>".$row[0]."</td><td>".$row[1]
 								."</td><td>".$row[2]."</td><td>".$row[3]
 								."</td><td>".$row[4]."</td>
 								<td>
-								<form action='action.php?id=1' method='post'>
-								<input type='submit' value='Add to Favs!'>
+								<form  method='post'>";
+					echo "<input name=$list[$j] type='submit' value=$list[$j]>
 								</form>
 								</tr>";
+					$j++;
 				}
+
+				$count = count($list);
+				for($i = 0; $i < $count; $i++){
+					if (isset($_POST[$list[$i]])) {
+						echo "Hit button: ";
+						echo $list[$i];
+						break;
+					}
+				}
+
 				echo "</table>";
 			}
 		?>
