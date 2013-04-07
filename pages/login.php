@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap.css" type="text/css" />
-		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap-responsive.css" type="text/css">
+		<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="../css/bootstrap-responsive.css" type="text/css">
 
 		<style type="text/css">
 			body {
@@ -23,25 +23,25 @@
 			}
 		</style>
 
-		<script src="javascript.js" type="text/javascript"></script>
+		<script src="../js/functions.js" type="text/javascript"></script>
 
-		<title>Welcome</title>
+		<title>Food Finder</title>
 	</head>
 
 	<body>
-		<?php include 'header.php'; 
-					include 'functions.php';	?>
+		<?php include '../includes/header.php'; 
+					include '../includes/functions.php';	?>
 
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div id="side-nav" class="span2">
 					<div class="well sidebar-nav">
-						<?php include 'filter.php'; ?>
+						<?php include '../includes/filter.php'; ?>
 					</div>
 				</div>
 
 			<div id="body" class="span10">
-				<div class=container-fluid">
+				<div class="container-fluid">
 					<div class="header">
 						<h1>Welcome to Food Finder!</h1>
 					</div>

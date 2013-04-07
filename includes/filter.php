@@ -1,6 +1,6 @@
 <div id="filter" class="container-fluid">
 	<div class="row-fluid">
-		<form method="GET" action="search.php" class="">
+		<form method="GET" action="../pages/search.php" class="">
 			<ul id="filters" class="nav nav-list">
 				<li class="nav-header"><h5>Search Filters</h5></li>
 				<li class="divider"></li>
