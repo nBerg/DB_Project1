@@ -5,6 +5,7 @@
 		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap.css" type="text/css" />
 		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap-responsive.css" type="text/css">
 
+		<script src="javascript.js"></script>
 	
 		<title>Food Finder</title>
 	</head>

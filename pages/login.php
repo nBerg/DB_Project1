@@ -5,15 +5,39 @@
 		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap.css" type="text/css" />
 		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap-responsive.css" type="text/css">
 
+		<style type="text/css">
+			body {
+				padding-top: 60px;
+				padding-bottom: 40px;
+			}
+			.sidebar-nav {
+				padding: 9px 0;
+			}
+
+			@media (max-width: 980px) {
+				.navbar-text.pull-right {
+					float: none;
+					padding-left: 5px;
+					padding-right: 5px;
+				}
+			}
+		</style>
+
+		<script src="javascript.js" type="text/javascript"></script>
+
 		<title>Welcome</title>
 	</head>
 
 	<body>
-		<?php include 'header.php'; ?>
+		<?php include 'header.php'; 
+					include 'functions.php';	?>
+
 		<div class="container-fluid">
 			<div class="row-fluid">
 				<div id="side-nav" class="span2">
-					<?php include 'filter.php'; ?>
+					<div class="well sidebar-nav">
+						<?php include 'filter.php'; ?>
+					</div>
 				</div>
 
 			<div id="body" class="span10">
