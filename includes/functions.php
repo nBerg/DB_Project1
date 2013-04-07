@@ -7,6 +7,26 @@
 		return oci_connect('nb2555', 'nbjc', $db);
 	}
 
+	function format_price_range($price)
+	{
+		$str = '';
+
+		for ($i = 1; $i <= $price; $i++)	
+			$str = $str.'$';
+
+		return $str;
+	}
+
+	function format_rating($rating)
+	{
+		$str = '';
+
+		for ($i = 1; $i <= $rating; $i++)
+			$str = $str.'<i class="icon-star"></i>';
+
+		return $str;
+	}
+
 	function get_rest_name($rid)
 	{
 		$query = 'SELECT R.name

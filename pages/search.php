@@ -2,8 +2,8 @@
 <html>
 	<head>	
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" href="../css/bootstrap.css" type="text/css" />
-		<link rel="stylesheet" href="../css/bootstrap-responsive.css" type="text/css">
+		<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="../css/bootstrap/css/bootstrap-responsive.css" type="text/css">
 
 		<style type="text/css">
 			body {
@@ -135,7 +135,7 @@
 											 <th>Address</th>
 											 <th>Neighborhood</th>
 											 <th>Phone Number</th>
-											 <th>AvgPrice</th>
+											 <th>Price Range</th>
 											 <th>Rating</th></tr></thead>';
 			$list = array();
 			for($i = 1; $i <= 6; $i++){
@@ -146,12 +146,14 @@
 			{
 				$cuisines = get_cuisine_info($row[0]);
 				$cuisine_string = arr_to_string($cuisines);
+				$price = format_price_range($row[5]);
+				$rating = format_rating($row[6]);
 
 				echo '<tr><td>
 							<a href="detail.php?id='.$row[0].'">'.$row[1].'</a>
 							<br>'.$cuisine_string.'
 							</td><td>'.$row[2].'</td><td>'.$row[3].'</td><td>'.$row[4].
-							'</td><td>'.$row[5].'</td><td>'.round($row[6]).'</td><td>
+							'</td><td>'.$price.'</td><td>'.$rating.'</td><td>
 							<form  method="post">';
 				echo '<input name='.$list[$j].' type="submit" value='.$list[$j].'>
 							</form>

@@ -2,8 +2,8 @@
 <html>
 	<head>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="stylesheet" href="../css/bootstrap.css" type="text.css" />
-		<link rel="stylesheet" href="../css/bootstrap-responsive.css" type="text/css" />
+		<link rel="stylesheet" href="../css/bootstrap/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="../css/bootstrap/css/bootstrap-responsive.css" type="text/css" />
 
 		<style type="text/css">
 			body {
@@ -63,7 +63,8 @@
 						<div id="additionalInfo" class="span8">
 							<dl class="dl-horizontal">
 								<dt>Price Range:</dt>
-								<dd><?php echo $result['basic']['avgPrice']; ?></dd>
+								<dd><?php $price = $result['basic']['avgPrice']; 
+													echo format_price_range($price) ?></dd>
 								<dt>Cuisine:</dt>
 								<?php print_array($result['cuisines'], '<dd>', '</dd>'); ?>
 								<dt>Vibes:</dt>
@@ -76,7 +77,9 @@
 				<div id="reviews">
 					<div id="header" class="row-fluid">
 							<h2>Reviews:</h2>
-							<p>Average Rating: <?php echo round($result['basic']['avgRating']); ?></p>	
+							<p>Average Rating: 
+								<?php $rating = ($result['basic']['avgRating']); 
+								 echo format_rating(round($rating)) ?></p>	
 					</div>
 					<div id="reviews" class="row-fluid">
 						<?php print_reviews($result['reviews']); ?>
