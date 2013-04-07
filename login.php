@@ -1,18 +1,47 @@
-<form id='login' method='post' accept-charset='UTF-8'>
-<fieldset>
-<legend>Login</legend>
-<input type='hidden' name='submitted' id='submitted' value='1'/>
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap-responsive.css" type="text/css">
+
+		<title>Welcome</title>
+	</head>
+
+	<body>
+		<?php include 'header.php'; ?>
+		<div class="container-fluid">
+			<div class="row-fluid">
+				<div id="side-nav" class="span2">
+					<?php include 'filter.php'; ?>
+				</div>
+
+			<div id="body" class="span10">
+				<div class=container-fluid">
+					<div class="header">
+						<h1>Welcome to Food Finder!</h1>
+					</div>
+
+					<form id='login' method='post' accept-charset='UTF-8'>
+						<fieldset>
+							<legend>Login</legend>
+							<input type='hidden' name='submitted' id='submitted' value='1'/>
  
-<label for='username' >Username*:</label>
-<input type='text' name='username' id='username'  maxlength="50" />
+							<label for='username' >Username*:</label>
+							<input type='text' name='username' id='username'  maxlength="50" />
  
-<label for='password' >Password*:</label>
-<input type='password' name='password' id='password' maxlength="50" />
+							<label for='password' >Password*:</label>
+							<input type='password' name='password' id='password' maxlength="50" />
+ 							<div>
+								<button type='submit' name='Submit' value='Submit' class="btn btn-inverse">Sign in</button>
+							</div>
  
-<input type='submit' name='Submit' value='Submit' />
- 
-</fieldset>
-</form>
+						</fieldset>
+					</form>
+				</div>
+			</div>
+		</div>
+	</body>
 
 <?php
 	$username = isset($_POST['username']) == true ? $_POST['username'] : '';
@@ -39,3 +68,5 @@
 		}
 	}
 ?>
+
+</html>

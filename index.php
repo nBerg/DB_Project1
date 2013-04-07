@@ -1,22 +1,15 @@
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>DB Project</title>
+	<head>	
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap.css" type="text/css" />
+		<link rel="stylesheet" href="styling/bootstrap/css/bootstrap-responsive.css" type="text/css">
+
+	
+		<title>Food Finder</title>
 	</head>
 
 	<body>
-		<?php 
-			include 'header.php';
-
-			if (isset($_GET['filterSubmit']))
-			{
-				include 'search.php';
-			}
-
-			else
-			{
-				echo '<h1>Welcome to Food Finder!!!</h1>';
-			}
-
-		?>
+		<?php include 'login.php'; ?>
 	<body>
 </html>
